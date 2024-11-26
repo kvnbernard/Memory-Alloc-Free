@@ -1,0 +1,113 @@
+\hypertarget{structures_8c}{}\section{utils/structures.c File Reference}
+\label{structures_8c}\index{utils/structures.\+c@{utils/structures.\+c}}
+
+
+this file is the .c used to manipulate the header block  
+
+
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}structures.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}ipc\+Tools.\+h\char`\"{}}\newline
+Include dependency graph for structures.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{structures_8c__incl}
+\end{center}
+\end{figure}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{structPaginationUnit}{Pagination\+Unit} \hyperlink{structures_8c_a12c11e0b78c302f5e32758f17422dc91}{init\+Pagination\+Unit} ()
+\begin{DoxyCompactList}\small\item\em Initialise an empty \hyperlink{structPaginationUnit}{Pagination\+Unit}. \end{DoxyCompactList}\item 
+void \hyperlink{structures_8c_afcf40202075d3f4ca3f13a4e1da22a9e}{reset\+Pagination\+Unit} (\hyperlink{structPaginationUnit}{Pagination\+Unit} $\ast$unit)
+\begin{DoxyCompactList}\small\item\em reset a given pagination\+Unit \end{DoxyCompactList}\item 
+\hyperlink{structDataRibbon}{Data\+Ribbon} \hyperlink{structures_8c_a259c0deed04105e9182970a82bab6940}{init\+Data\+Ribbon} (int size)
+\begin{DoxyCompactList}\small\item\em Initialise the Data Ribbon that will contains all our values. \end{DoxyCompactList}\item 
+void \hyperlink{structures_8c_a027000b01aec96c860c0a833bfe94355}{free\+Data\+Ribbon} (\hyperlink{structDataRibbon}{Data\+Ribbon} $\ast$ribbon)
+\begin{DoxyCompactList}\small\item\em Free a given \hyperlink{structDataRibbon}{Data\+Ribbon}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+this file is the .c used to manipulate the header block 
+
+this file is the .h used to manipulate the pagination block
+
+\begin{DoxyAuthor}{Author}
+Nicolas C\+I\+B\+U\+L\+KA -\/ Kevin B\+E\+R\+N\+A\+RD -\/ Aelien M\+O\+U\+B\+E\+C\+HE 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+0.\+1 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+2021-\/03-\/14
+\end{DoxyDate}
+\begin{DoxyCopyright}{Copyright}
+Copyright (c) 2021 
+\end{DoxyCopyright}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{structures_8c_a027000b01aec96c860c0a833bfe94355}\label{structures_8c_a027000b01aec96c860c0a833bfe94355}} 
+\index{structures.\+c@{structures.\+c}!free\+Data\+Ribbon@{free\+Data\+Ribbon}}
+\index{free\+Data\+Ribbon@{free\+Data\+Ribbon}!structures.\+c@{structures.\+c}}
+\subsubsection{\texorpdfstring{free\+Data\+Ribbon()}{freeDataRibbon()}}
+{\footnotesize\ttfamily void free\+Data\+Ribbon (\begin{DoxyParamCaption}\item[{\hyperlink{structDataRibbon}{Data\+Ribbon} $\ast$}]{ribbon }\end{DoxyParamCaption})}
+
+
+
+Free a given \hyperlink{structDataRibbon}{Data\+Ribbon}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ribbon} & \+: The Ribbon that will be released \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{structures_8c_a259c0deed04105e9182970a82bab6940}\label{structures_8c_a259c0deed04105e9182970a82bab6940}} 
+\index{structures.\+c@{structures.\+c}!init\+Data\+Ribbon@{init\+Data\+Ribbon}}
+\index{init\+Data\+Ribbon@{init\+Data\+Ribbon}!structures.\+c@{structures.\+c}}
+\subsubsection{\texorpdfstring{init\+Data\+Ribbon()}{initDataRibbon()}}
+{\footnotesize\ttfamily \hyperlink{structDataRibbon}{Data\+Ribbon} init\+Data\+Ribbon (\begin{DoxyParamCaption}\item[{int}]{size }\end{DoxyParamCaption})}
+
+
+
+Initialise the Data Ribbon that will contains all our values. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em size} & The size of the Ribbon \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\hyperlink{structDataRibbon}{Data\+Ribbon} \+: the array that will contains all our data 
+\end{DoxyReturn}
+\mbox{\Hypertarget{structures_8c_a12c11e0b78c302f5e32758f17422dc91}\label{structures_8c_a12c11e0b78c302f5e32758f17422dc91}} 
+\index{structures.\+c@{structures.\+c}!init\+Pagination\+Unit@{init\+Pagination\+Unit}}
+\index{init\+Pagination\+Unit@{init\+Pagination\+Unit}!structures.\+c@{structures.\+c}}
+\subsubsection{\texorpdfstring{init\+Pagination\+Unit()}{initPaginationUnit()}}
+{\footnotesize\ttfamily \hyperlink{structPaginationUnit}{Pagination\+Unit} init\+Pagination\+Unit (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Initialise an empty \hyperlink{structPaginationUnit}{Pagination\+Unit}. 
+
+\begin{DoxyReturn}{Returns}
+\hyperlink{structPaginationUnit}{Pagination\+Unit} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{structures_8c_afcf40202075d3f4ca3f13a4e1da22a9e}\label{structures_8c_afcf40202075d3f4ca3f13a4e1da22a9e}} 
+\index{structures.\+c@{structures.\+c}!reset\+Pagination\+Unit@{reset\+Pagination\+Unit}}
+\index{reset\+Pagination\+Unit@{reset\+Pagination\+Unit}!structures.\+c@{structures.\+c}}
+\subsubsection{\texorpdfstring{reset\+Pagination\+Unit()}{resetPaginationUnit()}}
+{\footnotesize\ttfamily void reset\+Pagination\+Unit (\begin{DoxyParamCaption}\item[{\hyperlink{structPaginationUnit}{Pagination\+Unit} $\ast$}]{unit }\end{DoxyParamCaption})}
+
+
+
+reset a given pagination\+Unit 
+
+
+\begin{DoxyParams}{Parameters}
+{\em unit} & \+: T\+He unit that will be reset \\
+\hline
+\end{DoxyParams}

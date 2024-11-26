@@ -1,0 +1,189 @@
+\hypertarget{ipcTools_8c}{}\section{utils/ipc\+Tools.c File Reference}
+\label{ipcTools_8c}\index{utils/ipc\+Tools.\+c@{utils/ipc\+Tools.\+c}}
+
+
+This file helps to manage icp Semaphores and mutex.  
+
+
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$sys/wait.\+h$>$}\newline
+{\ttfamily \#include $<$unistd.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}ipc\+Tools.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$sys/types.\+h$>$}\newline
+{\ttfamily \#include $<$sys/sem.\+h$>$}\newline
+{\ttfamily \#include $<$sys/ipc.\+h$>$}\newline
+{\ttfamily \#include $<$sys/shm.\+h$>$}\newline
+{\ttfamily \#include $<$sys/msg.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+Include dependency graph for ipc\+Tools.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{ipcTools_8c__incl}
+\end{center}
+\end{figure}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{ipcTools_8c_a70ed59adcb4159ac551058053e649640}\label{ipcTools_8c_a70ed59adcb4159ac551058053e649640}} 
+\#define {\bfseries S\+I\+ZE}~1024
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{ipcTools_8c_a45c8a1cc742b770f79825e79aa0c8ce7}{semalloc} (key\+\_\+t key, int val\+Init)
+\begin{DoxyCompactList}\small\item\em This function create a semaphore. \end{DoxyCompactList}\item 
+void \hyperlink{ipcTools_8c_a07d9975feec68c95cb5aba62b9d24ed8}{P} (int semid)
+\begin{DoxyCompactList}\small\item\em This function increments the value of the semaphore. \end{DoxyCompactList}\item 
+void \hyperlink{ipcTools_8c_a8a7b1645beb620891b3a8256143791e4}{V} (int semid)
+\begin{DoxyCompactList}\small\item\em This function decrements the semaphore value. \end{DoxyCompactList}\item 
+int \hyperlink{ipcTools_8c_a1a1666796045a3210edd37d16b0f9625}{semfree} (int semid)
+\begin{DoxyCompactList}\small\item\em This function destroy the semaphore. \end{DoxyCompactList}\item 
+int \hyperlink{ipcTools_8c_a88d7899467093e27a485527986aad253}{mutalloc} (key\+\_\+t key)
+\begin{DoxyCompactList}\small\item\em This function allocate a Mutex. \end{DoxyCompactList}\item 
+int \hyperlink{ipcTools_8c_a518dd2f4cfca662050363c790fb88972}{mutfree} (int semid)
+\begin{DoxyCompactList}\small\item\em this function desallocate a Mutex \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{ipcTools_8c_aaae3779ba3c90a6bd1db639fd20ef251}\label{ipcTools_8c_aaae3779ba3c90a6bd1db639fd20ef251}} 
+void $\ast$ {\bfseries shmalloc} (key\+\_\+t key, int size)
+\item 
+\mbox{\Hypertarget{ipcTools_8c_af6b34b8a7db92f7b60d335e3f06b8e34}\label{ipcTools_8c_af6b34b8a7db92f7b60d335e3f06b8e34}} 
+int {\bfseries shmfree} (key\+\_\+t key)
+\item 
+\mbox{\Hypertarget{ipcTools_8c_abada598767ab7be4c217842b75d7fdf7}\label{ipcTools_8c_abada598767ab7be4c217842b75d7fdf7}} 
+int {\bfseries msgalloc} (key\+\_\+t key)
+\item 
+\mbox{\Hypertarget{ipcTools_8c_a9bbc811831f58b58ba8af20811b114c8}\label{ipcTools_8c_a9bbc811831f58b58ba8af20811b114c8}} 
+int {\bfseries msgfree} (int msgqid)
+\item 
+\mbox{\Hypertarget{ipcTools_8c_a531a39a4d3ac97936b502754c60cd79d}\label{ipcTools_8c_a531a39a4d3ac97936b502754c60cd79d}} 
+int {\bfseries msgsend} (int msqid, char $\ast$msg, int msg\+Size)
+\item 
+\mbox{\Hypertarget{ipcTools_8c_a8e88811e1c78a08223e666537e5d0aac}\label{ipcTools_8c_a8e88811e1c78a08223e666537e5d0aac}} 
+int {\bfseries msgrecv} (int msqid, char $\ast$msg, int msg\+Size)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This file helps to manage icp Semaphores and mutex. 
+
+\begin{DoxyAuthor}{Author}
+Nicolas C\+I\+B\+U\+L\+KA -\/ Kevin B\+E\+R\+N\+A\+RD -\/ Aelien M\+O\+U\+B\+E\+C\+HE 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+0.\+1 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+2021-\/03-\/15
+\end{DoxyDate}
+\begin{DoxyCopyright}{Copyright}
+Copyright (c) 2021 
+\end{DoxyCopyright}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{ipcTools_8c_a88d7899467093e27a485527986aad253}\label{ipcTools_8c_a88d7899467093e27a485527986aad253}} 
+\index{ipc\+Tools.\+c@{ipc\+Tools.\+c}!mutalloc@{mutalloc}}
+\index{mutalloc@{mutalloc}!ipc\+Tools.\+c@{ipc\+Tools.\+c}}
+\subsubsection{\texorpdfstring{mutalloc()}{mutalloc()}}
+{\footnotesize\ttfamily int mutalloc (\begin{DoxyParamCaption}\item[{key\+\_\+t}]{key }\end{DoxyParamCaption})}
+
+
+
+This function allocate a Mutex. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em key} & a key\+\_\+t variable to guarantee the unicity of the mutex \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+An Integer which is the mutex identifier 
+\end{DoxyReturn}
+\mbox{\Hypertarget{ipcTools_8c_a518dd2f4cfca662050363c790fb88972}\label{ipcTools_8c_a518dd2f4cfca662050363c790fb88972}} 
+\index{ipc\+Tools.\+c@{ipc\+Tools.\+c}!mutfree@{mutfree}}
+\index{mutfree@{mutfree}!ipc\+Tools.\+c@{ipc\+Tools.\+c}}
+\subsubsection{\texorpdfstring{mutfree()}{mutfree()}}
+{\footnotesize\ttfamily int mutfree (\begin{DoxyParamCaption}\item[{int}]{semid }\end{DoxyParamCaption})}
+
+
+
+this function desallocate a Mutex 
+
+
+\begin{DoxyParams}{Parameters}
+{\em semid} & The identifier of the Mutex \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+An Integer with the value -\/1 if an error occured, 0 if not 
+\end{DoxyReturn}
+\mbox{\Hypertarget{ipcTools_8c_a07d9975feec68c95cb5aba62b9d24ed8}\label{ipcTools_8c_a07d9975feec68c95cb5aba62b9d24ed8}} 
+\index{ipc\+Tools.\+c@{ipc\+Tools.\+c}!P@{P}}
+\index{P@{P}!ipc\+Tools.\+c@{ipc\+Tools.\+c}}
+\subsubsection{\texorpdfstring{P()}{P()}}
+{\footnotesize\ttfamily void P (\begin{DoxyParamCaption}\item[{int}]{semid }\end{DoxyParamCaption})}
+
+
+
+This function increments the value of the semaphore. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em semid} & The Identifier of the Semaphore \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{ipcTools_8c_a45c8a1cc742b770f79825e79aa0c8ce7}\label{ipcTools_8c_a45c8a1cc742b770f79825e79aa0c8ce7}} 
+\index{ipc\+Tools.\+c@{ipc\+Tools.\+c}!semalloc@{semalloc}}
+\index{semalloc@{semalloc}!ipc\+Tools.\+c@{ipc\+Tools.\+c}}
+\subsubsection{\texorpdfstring{semalloc()}{semalloc()}}
+{\footnotesize\ttfamily int semalloc (\begin{DoxyParamCaption}\item[{key\+\_\+t}]{key,  }\item[{int}]{val\+Init }\end{DoxyParamCaption})}
+
+
+
+This function create a semaphore. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em key} & A key to guarantee the unicity of the Semaphore \\
+\hline
+{\em val\+Init} & The value that will contains the semaphore when it will be initialise \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+an Integer that will be the semaphore identifier 
+\end{DoxyReturn}
+\mbox{\Hypertarget{ipcTools_8c_a1a1666796045a3210edd37d16b0f9625}\label{ipcTools_8c_a1a1666796045a3210edd37d16b0f9625}} 
+\index{ipc\+Tools.\+c@{ipc\+Tools.\+c}!semfree@{semfree}}
+\index{semfree@{semfree}!ipc\+Tools.\+c@{ipc\+Tools.\+c}}
+\subsubsection{\texorpdfstring{semfree()}{semfree()}}
+{\footnotesize\ttfamily int semfree (\begin{DoxyParamCaption}\item[{int}]{semid }\end{DoxyParamCaption})}
+
+
+
+This function destroy the semaphore. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em semid} & The identifier of the semaphore \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+an Integer with the value -\/1 if a problem occured, 0 if not 
+\end{DoxyReturn}
+\mbox{\Hypertarget{ipcTools_8c_a8a7b1645beb620891b3a8256143791e4}\label{ipcTools_8c_a8a7b1645beb620891b3a8256143791e4}} 
+\index{ipc\+Tools.\+c@{ipc\+Tools.\+c}!V@{V}}
+\index{V@{V}!ipc\+Tools.\+c@{ipc\+Tools.\+c}}
+\subsubsection{\texorpdfstring{V()}{V()}}
+{\footnotesize\ttfamily void V (\begin{DoxyParamCaption}\item[{int}]{semid }\end{DoxyParamCaption})}
+
+
+
+This function decrements the semaphore value. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em semid} & The indentifier of the semaphore \\
+\hline
+\end{DoxyParams}
