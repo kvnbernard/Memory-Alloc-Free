@@ -1,0 +1,7 @@
+init 340
+test alloc 50
+test2 alloc 200
+test3 alloc 20
+free test2
+free test
+close memory
